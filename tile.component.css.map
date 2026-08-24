@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/pages/game/tile/tile.component.css"],
-  "sourcesContent": [".tile {\n  width: 100%;\n  aspect-ratio: 1;\n  display: grid;\n  place-items: center;\n  border: 1px solid #cbd5e1;\n  border-radius: 6px;\n  background: #fff;\n  color: #18212f;\n  font-weight: 900;\n  font-size: clamp(18px, 4vw, 28px);\n}\n\n.wall {\n  background: #18212f;\n  border-color: #18212f;\n}\n\n.target {\n  background: #facc15;\n}\n\n.box {\n  background: #b45309;\n  color: #fff;\n}\n\n.box-on-target {\n  background: #16a34a;\n}\n\n.player {\n  background: #2563eb;\n  color: #fff;\n}\n"],
-  "mappings": ";AAAA,CAAC;AACC,SAAO;AACP,gBAAc;AACd,WAAS;AACT,eAAa;AACb,UAAQ,IAAI,MAAM;AAClB,iBAAe;AACf,cAAY;AACZ,SAAO;AACP,eAAa;AACb,aAAW,MAAM,IAAI,EAAE,GAAG,EAAE;AAC9B;AAEA,CAAC;AACC,cAAY;AACZ,gBAAc;AAChB;AAEA,CAAC;AACC,cAAY;AACd;AAEA,CAAC;AACC,cAAY;AACZ,SAAO;AACT;AAEA,CAAC;AACC,cAAY;AACd;AAEA,CAAC;AACC,cAAY;AACZ,SAAO;AACT;",
-  "names": []
-}
