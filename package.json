@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve",
-    "build": "ng build"
+    "build": "ng build",
+    "build:pages": "ng build --base-href /boxito/",
+    "deploy:pages": "npm run build:pages && ngh --dir dist/box-puzzle/browser --repo https://github.com/Hozyfa-Batisha/boxito.git --branch gh-pages --message \"Deploy Box Puzzle to GitHub Pages\""
   },
   "private": true,
   "dependencies": {
