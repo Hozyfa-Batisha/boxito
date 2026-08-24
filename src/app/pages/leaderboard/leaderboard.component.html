@@ -1,0 +1,70 @@
+<main class="page-shell">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active">Leaderboard</li>
+      </ol>
+    </nav>
+
+    <div class="row g-3">
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h1 class="h4 mb-0">Best Puzzle Scores</h1>
+            <button class="btn btn-outline-danger btn-sm" type="button" (click)="clear()">Clear</button>
+          </div>
+
+          <div class="card-body">
+            <div *ngIf="scores.length === 0" class="alert alert-warning">No saved wins yet.</div>
+
+            <div class="table-responsive" *ngIf="scores.length > 0">
+              <table class="table table-striped align-middle">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Player</th>
+                    <th>Level</th>
+                    <th>Moves</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let score of visibleScores; let i = index">
+                    <td>{{ (page - 1) * pageSize + i + 1 }}</td>
+                    <td>{{ score.player }}</td>
+                    <td>{{ score.level }}</td>
+                    <td><span class="badge text-bg-success">{{ score.moves }}</span></td>
+                    <td>{{ score.date }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <nav *ngIf="pages.length > 1">
+              <ul class="pagination mb-0">
+                <li class="page-item" *ngFor="let item of pages" [class.active]="page === item">
+                  <button class="page-link" type="button" (click)="page = item">{{ item }}</button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5">Score Rule</h2>
+            <div class="list-group">
+              <div class="list-group-item">Lower moves are better.</div>
+              <div class="list-group-item">Only completed levels are saved.</div>
+              <div class="list-group-item">Restarting does not save a score.</div>
+            </div>
+            <a class="btn btn-box w-100 mt-3" routerLink="/game">Play Again</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

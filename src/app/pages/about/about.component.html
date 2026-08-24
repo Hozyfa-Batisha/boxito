@@ -1,0 +1,55 @@
+<main class="page-shell">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active">About</li>
+      </ol>
+    </nav>
+
+    <div class="row g-3">
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h1 class="h3">About Box Puzzle</h1>
+            <p class="text-secondary">A Sokoban-style Angular game where the player pushes boxes to target cells.</p>
+
+            <ul class="nav nav-pills mb-3" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#angularTab" type="button">Angular</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#bootstrapTab" type="button">Bootstrap</button>
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="angularTab">
+                <p>Standalone components, routing, guard, interceptor, services, HttpClient, Reactive Forms, ngOnInit, Input and Output are used.</p>
+              </div>
+              <div class="tab-pane fade" id="bootstrapTab">
+                <p>Navbar, cards, buttons, forms, table, alerts, badges, breadcrumbs, button groups, list groups, progress bars, spinners, pagination, accordion and tabs are included.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5">Project Checklist</h2>
+            <p class="text-secondary">Core assignment coverage</p>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-success" style="width: 96%">96%</div>
+            </div>
+            <div class="d-grid gap-2">
+              <a class="btn btn-box" routerLink="/register">Register</a>
+              <a class="btn btn-outline-dark" routerLink="/game">Open Game</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

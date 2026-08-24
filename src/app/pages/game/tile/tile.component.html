@@ -1,0 +1,11 @@
+<button
+  type="button"
+  class="tile"
+  [class.wall]="cell.wall"
+  [class.target]="cell.target"
+  [class.box]="cell.box"
+  [class.player]="cell.player"
+  [class.box-on-target]="cell.box && cell.target"
+  (click)="selected.emit(cell)">
+  {{ label }}
+</button>

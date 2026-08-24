@@ -1,0 +1,83 @@
+<main class="page-shell">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active">Game</li>
+      </ol>
+    </nav>
+
+    <div class="alert" [class.alert-success]="won" [class.alert-info]="!won">
+      {{ message }}
+    </div>
+
+    <div class="row g-3">
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-ink text-white d-flex justify-content-between align-items-center">
+            <strong>{{ level.name }}</strong>
+            <span>Moves: {{ moves }}</span>
+          </div>
+
+          <div class="card-body">
+            <div class="board" [style.grid-template-columns]="'repeat(' + (board[0] ? board[0].length : 1) + ', 1fr)'">
+              <ng-container *ngFor="let row of board">
+                <app-tile
+                  *ngFor="let cell of row"
+                  [cell]="cell"
+                  (selected)="tileClicked($event)">
+                </app-tile>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h2 class="h5">Controls</h2>
+            <div class="btn-group w-100 mb-3" role="group">
+              <button class="btn btn-outline-dark" type="button" (click)="move(-1, 0)">Up</button>
+              <button class="btn btn-outline-dark" type="button" (click)="move(1, 0)">Down</button>
+            </div>
+            <div class="btn-group w-100 mb-3" role="group">
+              <button class="btn btn-outline-dark" type="button" (click)="move(0, -1)">Left</button>
+              <button class="btn btn-outline-dark" type="button" (click)="move(0, 1)">Right</button>
+            </div>
+
+            <button class="btn btn-box w-100 mb-2" type="button" (click)="restart()">Restart</button>
+            <button class="btn btn-outline-success w-100" type="button" [disabled]="!won" (click)="nextLevel()">Next Level</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5">Level Stats</h2>
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Difficulty</span>
+                <span class="badge text-bg-primary">{{ level.difficulty }}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Best Moves</span>
+                <span class="badge text-bg-warning">{{ level.bestMoves }}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Boxes</span>
+                <span class="badge text-bg-success">{{ boxes.length }}</span>
+              </li>
+            </ul>
+
+            <label class="form-label">Target Progress</label>
+            <div class="progress">
+              <div class="progress-bar bg-success" [style.width.%]="targets.length ? (boxesOnTargets() / targets.length) * 100 : 0">
+                {{ boxesOnTargets() }}/{{ targets.length }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

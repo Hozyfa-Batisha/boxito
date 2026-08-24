@@ -1,0 +1,102 @@
+<main class="page-shell">
+  <section class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <span class="badge text-bg-warning mb-3">2D puzzle game</span>
+        <h1 class="display-5 fw-bold">Push every box onto its target.</h1>
+        <p class="lead text-secondary">Move the player, push crates, avoid stuck corners, and finish each level with fewer moves.</p>
+        <div class="d-flex gap-2">
+          <a class="btn btn-box btn-lg" routerLink="/game">Play Game</a>
+          <a class="btn btn-outline-dark btn-lg" routerLink="/levels">View Levels</a>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="hero-board shadow">
+          <div class="mini wall"></div>
+          <div class="mini wall"></div>
+          <div class="mini wall"></div>
+          <div class="mini wall"></div>
+          <div class="mini player">@</div>
+          <div class="mini box">B</div>
+          <div class="mini target">X</div>
+          <div class="mini floor"></div>
+          <div class="mini wall"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3 mt-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h5">Grid Movement</h2>
+            <p class="text-secondary">Use arrow keys or the buttons to move one cell at a time.</p>
+            <span class="badge text-bg-primary">Event Binding</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h5">Smart Levels</h2>
+            <p class="text-secondary">Levels are loaded from a service and rendered with reusable tiles.</p>
+            <div class="progress">
+              <div class="progress-bar bg-success" style="width: 80%">Logic</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h5">Saved Scores</h2>
+            <p class="text-secondary">Win a level and your moves are stored in the leaderboard.</p>
+            <span class="badge text-bg-success">localStorage</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3 mt-4">
+      <div class="col-lg-5">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5">API Tips</h2>
+            <div *ngIf="loading" class="spinner-border text-primary"></div>
+            <ul class="list-group" *ngIf="!loading">
+              <li class="list-group-item" *ngFor="let tip of tips">{{ tip }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="accordion" id="rules">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ruleOne">
+                How to win
+              </button>
+            </h2>
+            <div id="ruleOne" class="accordion-collapse collapse show" data-bs-parent="#rules">
+              <div class="accordion-body">Put all boxes on yellow targets. The level ends as soon as every target has a box.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ruleTwo">
+                Small warning
+              </button>
+            </h2>
+            <div id="ruleTwo" class="accordion-collapse collapse" data-bs-parent="#rules">
+              <div class="accordion-body">You can push boxes, but you cannot pull them back.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,9 @@
+.board {
+  width: min(640px, 100%);
+  display: grid;
+  gap: 6px;
+  margin-inline: auto;
+  padding: 12px;
+  border-radius: 8px;
+  background: #dbeafe;
+}

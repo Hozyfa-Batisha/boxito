@@ -1,0 +1,41 @@
+.hero-board {
+  width: min(420px, 100%);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 18px;
+  border-radius: 8px;
+  background: #dbeafe;
+}
+
+.mini {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 34px;
+}
+
+.wall {
+  background: #18212f;
+}
+
+.floor {
+  background: #fff;
+}
+
+.box {
+  background: #b45309;
+  color: #fff;
+}
+
+.target {
+  background: #facc15;
+}
+
+.player {
+  background: #2563eb;
+  color: #fff;
+}

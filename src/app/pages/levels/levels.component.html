@@ -1,0 +1,23 @@
+<main class="page-shell">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active">Levels</li>
+      </ol>
+    </nav>
+
+    <div class="row g-3">
+      <div class="col-md-4" *ngFor="let level of levels">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <span class="badge text-bg-primary mb-2">{{ level.difficulty }}</span>
+            <h1 class="h4">{{ level.name }}</h1>
+            <p class="text-secondary">Try to solve this level in about {{ level.bestMoves }} moves.</p>
+            <a class="btn btn-box" [routerLink]="['/game', level.id]">Play</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
