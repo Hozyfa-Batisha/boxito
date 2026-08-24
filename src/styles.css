@@ -1,0 +1,30 @@
+:root {
+  --box-ink: #18212f;
+  --box-blue: #2563eb;
+  --box-green: #16a34a;
+  --box-yellow: #facc15;
+  --box-paper: #f7fafc;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--box-paper);
+  color: var(--box-ink);
+}
+
+.bg-ink {
+  background: var(--box-ink);
+}
+
+.btn-box {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--box-blue);
+  --bs-btn-border-color: var(--box-blue);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #1d4ed8;
+  --bs-btn-hover-border-color: #1d4ed8;
+}
+
+.page-shell {
+  padding: 28px 0;
+}
